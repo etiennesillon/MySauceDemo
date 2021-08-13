@@ -23,7 +23,7 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
     private static String USERNAME = "standard_user";
     private static String PASSWD = "secret_sauce";
     
-    private static final boolean IS_FAIL = true;
+    private static final boolean IS_FAIL = false;
     
 	/*********************************************************************/
 
@@ -32,7 +32,7 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
     	
         return new Object[][]{
         	
-            new Object[]{IE, LATEST, WIN10, RES1280WIN, IS_FAIL},
+            new Object[]{IE, LATEST, WIN10, RES1280WIN, true},
             new Object[]{EDGE, LATEST, WIN10, RES1280WIN, IS_FAIL},
             new Object[]{FIREFOX, LATEST, WIN10, RES1280WIN, IS_FAIL},
             new Object[]{CHROME, LATEST, WIN10, RES1280WIN, IS_FAIL},
@@ -66,7 +66,12 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
         ShopPage shopPage = loginPage.login(USERNAME, PASSWD);
 
         if(isFail) {
-        	this.runScript("document.querySelectorAll('.inventory_item_img').forEach(function (item) {item.src = 'https://wrongurlink/image.png'})");
+//        	this.runScript("document.querySelector(\"div.inventory_item_img\").innerHTML = \"<img alt='Sauce Labs Backpack' class='inventory_item_img' src='/static/media/sauce-backpack-1200x1500.34e7aa42.jpg'>\"");
+//        	this.runScript("document.querySelectorAll('.inventory_item_img').forEach(function (item) {item.src = 'https://wrongurlink/image.png'})");
+        	this.runScript("document.querySelector(\"div.inventory_item_price\").innerHTML = '$30.00'");
+        	this.runScript("document.querySelector(\"div.inventory_item_name\").style.textAlign = 'right'");
+        	this.runScript("document.querySelector(\"div.inventory_item_desc\").style.color = 'red'");
+        	this.runScript("var node = document.createElement('P');node.innerHTML = 'OOOOPS!';document.getElementById('header_container').appendChild(node);");
         }
         
         this.takeScreenshot("Shop Page");

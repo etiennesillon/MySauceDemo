@@ -22,6 +22,7 @@ public class SauceDemoAppRDCTest extends TestBase  {
     public void loginTest(Integer platformId, String deviceName, Method method) throws MalformedURLException, InvalidElementStateException, UnexpectedException {
     	
         this.createDriver(APP_NAMES, deviceName, platformId, method.getName(), null);
+        
         AppiumDriver<MobileElement> driver = this.getWebDriver();
         
         driver.findElementByAccessibilityId("test-Username").sendKeys("standard_user");

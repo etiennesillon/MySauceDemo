@@ -38,8 +38,8 @@ public class TestBase  {
     public String buildTag = System.getenv("BUILD_TAG");
     public String username = System.getenv("SAUCE_USERNAME");
     public String accesskey = System.getenv("SAUCE_ACCESS_KEY");
-
-    public String app = "storage:filename=Android.SauceLabs.Mobile.Sample.app.2.7.1.apk";
+    
+    static final boolean IS_JIRA_NEEDED = false;
 
     /**************************************************************************************************/
 
@@ -55,8 +55,12 @@ public class TestBase  {
     public static Object[][] sauceBrowserDataProvider(Method testMethod) {
     	
         return new Object[][]{
+            new Object[]{IOS, "iPhone 12.*"},
+            new Object[]{IOS, "iPhone 11.*"},
+            new Object[]{IOS, "iPhone 8.*"},
+            new Object[]{ANDROID, "Samsung Galaxy S21.*"},
+            new Object[]{ANDROID, "Huawei P30.*"},
             new Object[]{ANDROID, "Google Pixel .*"},
-            new Object[]{IOS, "iPhone .*"}
         };
         
     }
@@ -112,12 +116,12 @@ public class TestBase  {
         if(platformId == ANDROID) {
         	webDriver.set(new AndroidDriver<MobileElement>(new URL(SAUCE_URL),capabilities));        	
         } else if(platformId == IOS) {
-            capabilities.setCapability("app", appNames[1]);
         	webDriver.set(new IOSDriver<MobileElement>(new URL(SAUCE_URL),capabilities));        	
         }
         
         String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
         sessionId.set(id);
+
         config.set(new MyTestConfig(deviceName, "", PLATFORM_NAMES[platformId], name, id));
         
     }
@@ -149,7 +153,7 @@ public class TestBase  {
     @AfterSuite
     public void checkIfIssueNeeded() throws Exception {
     	
-    	if(failedTests.size() > 0) {
+    	if(IS_JIRA_NEEDED && failedTests.size() > 0) {
     		
     		String summary = "", description = "";
     		for(MyTestConfig conf : failedTests) {

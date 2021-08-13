@@ -18,14 +18,10 @@ public class MySimpleVisualDemo {
 	    String accesskey = System.getenv("SAUCE_ACCESS_KEY");
 	    String screenerApiKey = System.getenv("SCREENER_API_KEY");
 
-	    DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability(CapabilityType.BROWSER_NAME, "firefox");
-        capabilities.setCapability(CapabilityType.VERSION, "latest");
-	    
 	    MutableCapabilities sauceOptions = new MutableCapabilities();
 	    sauceOptions.setCapability("username", username);
 	    sauceOptions.setCapability("accesskey", accesskey);
-	    capabilities.setCapability("sauce:options", sauceOptions);
+	    sauceOptions.setCapability("name", "MySimpleVisualDemo");
 	    
 	    MutableCapabilities screenerOptions = new MutableCapabilities();
 	    screenerOptions.setCapability("structure", new Boolean(true));
@@ -39,11 +35,17 @@ public class MySimpleVisualDemo {
 	    sauceVisual.setCapability("viewportSize", "1280x1024");
 	    sauceVisual.setCapability("diffOptions", screenerOptions);
 	    sauceVisual.setCapability("ignore", "#some-id, .some-selector");
+	    
+	    DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability(CapabilityType.BROWSER_NAME, "firefox");
+        capabilities.setCapability(CapabilityType.VERSION, "latest");
+        capabilities.setCapability("name", "MySimpleVisualDemo");
+	    capabilities.setCapability("sauce:options", sauceOptions);
 	    capabilities.setCapability("sauce:visual", sauceVisual);
 	    
 	    WebDriver driver = new RemoteWebDriver(new URL("https://hub.screener.io:443/wd/hub"), capabilities);
 	    
-	    driver.get("https://demo-xbio.tnq.co.in/about/our-mission#");
+	    driver.get("https://www.google.com/");
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("/*@visual.init*/", "My Visual Test");
 	    js.executeScript("/*@visual.snapshot*/", "Home");
