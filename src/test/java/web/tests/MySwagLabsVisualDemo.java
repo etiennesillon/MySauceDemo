@@ -10,9 +10,9 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import utils.MyTestUtils;
-import web.pages.SwagLabs.CartPage;
-import web.pages.SwagLabs.LoginPage;
-import web.pages.SwagLabs.ShopPage;
+import web.pages.DemoCartWebPage;
+import web.pages.DemoLoginWebPage;
+import web.pages.DemoShopWebPage;
 
 public class MySwagLabsVisualDemo extends VisualTestBase {
 	
@@ -23,7 +23,7 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
     private static String USERNAME = "standard_user";
     private static String PASSWD = "secret_sauce";
     
-    private static final boolean IS_FAIL = false;
+    private static final boolean IS_FAIL = true;
     
 	/*********************************************************************/
 
@@ -32,17 +32,17 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
     	
         return new Object[][]{
         	
-            new Object[]{IE, LATEST, WIN10, RES1280WIN, true},
-            new Object[]{EDGE, LATEST, WIN10, RES1280WIN, IS_FAIL},
-            new Object[]{FIREFOX, LATEST, WIN10, RES1280WIN, IS_FAIL},
-            new Object[]{CHROME, LATEST, WIN10, RES1280WIN, IS_FAIL},
-            new Object[]{CHROME, LATEST, MACOS, RES1280MAC, IS_FAIL},
-            new Object[]{SAFARI, LATEST, MACOS, RES1280MAC, IS_FAIL},
-            new Object[]{FIREFOX, LATEST, MACOS, RES1280WIN, IS_FAIL},
+            new Object[]{IE, LATEST, WIN10, RES1280WIN, IS_FAIL},
+            new Object[]{EDGE, LATEST, WIN10, RES1280WIN, false},
+            new Object[]{FIREFOX, LATEST, WIN10, RES1280WIN, false},
+            new Object[]{CHROME, LATEST, WIN10, RES1280WIN, false},
+            new Object[]{CHROME, LATEST, MACOS, RES1280MAC, false},
+            new Object[]{SAFARI, LATEST, MACOS, RES1280MAC, false},
+            new Object[]{FIREFOX, LATEST, MACOS, RES1280WIN, false},
 
-            new Object[]{CHROME, LATEST, MACOS, RES_IPHONE12, IS_FAIL},
-            new Object[]{SAFARI, LATEST, MACOS, RES_IPHONE12, IS_FAIL},
-            new Object[]{CHROME, LATEST, WIN10, RES_GALAXYS21, IS_FAIL},
+            new Object[]{CHROME, LATEST, MACOS, RES_IPHONE12, false},
+            new Object[]{SAFARI, LATEST, MACOS, RES_IPHONE12, false},
+            new Object[]{CHROME, LATEST, WIN10, RES_GALAXYS21, false},
 
         };
         
@@ -58,16 +58,14 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
         WebDriver driver = this.getWebDriver();
         
         this.annotate("Visiting Demo Login page...");
-        LoginPage loginPage = LoginPage.visitPage(driver, false);
-
+        DemoLoginWebPage loginPage = DemoLoginWebPage.visitPage(driver, false);
+        
         this.takeScreenshot("Login Page");
 
-        this.annotate(String.format("Loging in with: \"%s\"", USERNAME));
-        ShopPage shopPage = loginPage.login(USERNAME, PASSWD);
+        this.annotate(String.format("Login in with: \"%s\"", USERNAME));
+        DemoShopWebPage shopPage = loginPage.login(USERNAME, PASSWD);
 
         if(isFail) {
-//        	this.runScript("document.querySelector(\"div.inventory_item_img\").innerHTML = \"<img alt='Sauce Labs Backpack' class='inventory_item_img' src='/static/media/sauce-backpack-1200x1500.34e7aa42.jpg'>\"");
-//        	this.runScript("document.querySelectorAll('.inventory_item_img').forEach(function (item) {item.src = 'https://wrongurlink/image.png'})");
         	this.runScript("document.querySelector(\"div.inventory_item_price\").innerHTML = '$30.00'");
         	this.runScript("document.querySelector(\"div.inventory_item_name\").style.textAlign = 'right'");
         	this.runScript("document.querySelector(\"div.inventory_item_desc\").style.color = 'red'");
@@ -76,11 +74,11 @@ public class MySwagLabsVisualDemo extends VisualTestBase {
         
         this.takeScreenshot("Shop Page");
 
-        this.annotate(String.format("Adding item and go to cart", USERNAME));
-        CartPage cart = shopPage.selectItemAndGotToCart();
+        this.annotate(String.format("Add item and go to cart", USERNAME));
+        DemoCartWebPage cart = shopPage.selectItemAndGotToCart();
         
         this.takeScreenshot("Cart Page");
-
+        
     }
 
 }

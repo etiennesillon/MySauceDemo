@@ -1,209 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="6" passed="6">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="105151" started-at="2021-08-06T15:04:22 AEST" finished-at="2021-08-06T15:06:07 AEST">
+  <suite name="Default suite" duration-ms="11906" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="105151" started-at="2021-08-06T15:04:22 AEST" finished-at="2021-08-06T15:06:07 AEST">
-      <class name="app.tests.SauceDemoAppRDCTest">
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="103965" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:06:06 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Huawei P30.*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="11906" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
+      <class name="web.tests.SauceDemoWebSimTest">
+        <test-method status="PASS" signature="setupAppium()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="setupAppium" is-config="true" duration-ms="59411" started-at="2021-08-23T21:02:58 AEST" finished-at="2021-08-23T21:03:58 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupAppium -->
+        <test-method status="PASS" signature="loginTest()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="loginTest" duration-ms="11885" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="36054" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:04:58 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[iPhone 8.*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="uninstallApp()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="uninstallApp" is-config="true" duration-ms="1900" started-at="2021-08-23T21:04:11 AEST" finished-at="2021-08-23T21:04:13 AEST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="53885" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:05:16 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Google Pixel .*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="39830" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:05:02 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[iPhone 12.*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="44536" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:05:07 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[iPhone 11.*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="loginTest" duration-ms="82505" started-at="2021-08-06T15:04:22 AEST" data-provider="hardCodedPhones" finished-at="2021-08-06T15:05:45 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Samsung Galaxy S21.*]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[public void app.tests.SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="1768" started-at="2021-08-06T15:04:58 AEST" finished-at="2021-08-06T15:05:00 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="2007" started-at="2021-08-06T15:05:02 AEST" finished-at="2021-08-06T15:05:04 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="1905" started-at="2021-08-06T15:05:07 AEST" finished-at="2021-08-06T15:05:09 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="1215" started-at="2021-08-06T15:05:16 AEST" finished-at="2021-08-06T15:05:17 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="1509" started-at="2021-08-06T15:05:45 AEST" finished-at="2021-08-06T15:05:46 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="tearDown" is-config="true" duration-ms="1132" started-at="2021-08-06T15:06:06 AEST" finished-at="2021-08-06T15:06:07 AEST">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=SauceDemoAppRDCTest.loginTest(java.lang.Integer,java.lang.String,java.lang.reflect.Method)[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="checkIfIssueNeeded()[pri:0, instance:app.tests.SauceDemoAppRDCTest@eb21112]" name="checkIfIssueNeeded" is-config="true" duration-ms="1" started-at="2021-08-06T15:06:07 AEST" finished-at="2021-08-06T15:06:07 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- checkIfIssueNeeded -->
-      </class> <!-- app.tests.SauceDemoAppRDCTest -->
+        </test-method> <!-- uninstallApp -->
+      </class> <!-- web.tests.SauceDemoWebSimTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

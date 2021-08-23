@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="app.tests.SauceDemoAppRDCTest">
+      <class name="web.tests.MyEnd2EndTest">
         <methods>
-          <include name="loginTest" invocation-numbers="4"/>
           <include name="checkIfIssueNeeded"/>
           <include name="tearDown"/>
+          <include name="loginTest" invocation-numbers="0"/>
         </methods>
-      </class> <!-- app.tests.SauceDemoAppRDCTest -->
+      </class> <!-- web.tests.MyEnd2EndTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

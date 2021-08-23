@@ -128,9 +128,6 @@ public class VisualTestBase  {
         	sauceOpts.setCapability("tunnelIdentifier", "etiennesil_tunnel_id");
         }
 
-        // tags doesn't work in APAC
-        // sauceOpts.setCapability("tags", "w3c-chrome-tests");
-
         Capabilities options = null;
 
 		MutableCapabilities sauceVisual = null;
@@ -153,11 +150,7 @@ public class VisualTestBase  {
             specificOpts.setCapability("sauce:options", sauceOpts);
             
             if(sauceVisual != null) {
-//            	Map<String, String> mobileEmulation = new HashMap<>();
-//            	mobileEmulation.put("deviceName", viewportSize);
-//            	specificOpts.setExperimentalOption("mobileEmulation", mobileEmulation);
         		specificOpts.setCapability("sauce:visual", sauceVisual);
-        		
             }
             options = specificOpts;
             
@@ -262,14 +255,20 @@ public class VisualTestBase  {
     
 	/*********************************************************************/
 
-    protected void takeScreenshot(String label) {
+    protected void takeScreenshot(String label, Map<String, Object> arguments) {
         try {
 			Thread.sleep(SLEEP);
 		} catch (InterruptedException e) {
 		}
-        ((JavascriptExecutor) webDriver.get()).executeScript("/*@visual.snapshot*/", label);
+        if(arguments == null) {
+            ((JavascriptExecutor) webDriver.get()).executeScript("/*@visual.snapshot*/", label);
+        } else {
+            ((JavascriptExecutor) webDriver.get()).executeScript("/*@visual.snapshot*/", label, arguments);
+        }
     }    
 	
+    protected void takeScreenshot(String label) { takeScreenshot(label, null); }
+    
 	/*********************************************************************/
 
     protected void runScript(String script) {

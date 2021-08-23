@@ -26,8 +26,6 @@ public class SauceDemoAppSimTest implements SauceOnDemandSessionIdProvider, Sauc
     public String username = System.getenv("SAUCE_USERNAME");
     public String accesskey = System.getenv("SAUCE_ACCESS_KEY");
 
-    public String app = "storage:filename=Android.SauceLabs.Mobile.Sample.app.2.7.1.apk";
-
     /**************************************************************************************************/
 
     public SauceOnDemandAuthentication authentication = new SauceOnDemandAuthentication(username, accesskey);
@@ -55,13 +53,10 @@ public class SauceDemoAppSimTest implements SauceOnDemandSessionIdProvider, Sauc
         capabilities.setCapability("platformVersion", "14.3");
         capabilities.setCapability("deviceName", "iPhone Simulator");
         capabilities.setCapability("name", "SauceDemoAppSimTest");
-        capabilities.setCapability("app", "sauce-storage:sample-app-ios-7-21-20.zip");
+        capabilities.setCapability("app", "iOS.RealDevice.SauceLabs.Mobile.Sample.app.2.7.1.ipa");
 
         driver = new IOSDriver<MobileElement>(new URL("https://" + authentication.getUsername() + ":" + authentication.getAccessKey() + seleniumURI + "/wd/hub"), capabilities);
 	    sessionId = driver.getSessionId().toString();
-	    
-//	    driver = new AndroidDriver<MobileElement>(new URL("https://" + authentication.getUsername() + ":" + authentication.getAccessKey() + seleniumURI + "/wd/hub"), capabilities);
-//	    sessionId = driver.getSessionId().toString();
 	    
 	}
 	

@@ -1,6 +1,5 @@
 package web.tests;
 
-import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.rmi.UnexpectedException;
@@ -16,7 +15,6 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
-import org.testng.annotations.DataProvider;
 
 import com.saucelabs.common.SauceOnDemandAuthentication;
 
@@ -28,10 +26,6 @@ import utils.MyTestConfig;
 
 public class TestBase  {
 	
-	/*********************************************************************/
-
-    public static boolean IS_FAIL = false; 						// Fail IE tests for Failure Analysis 
-
 	/**************************************************************************************************/
 
     public String seleniumURI = "@ondemand.us-west-1.saucelabs.com:443";
@@ -81,57 +75,8 @@ public class TestBase  {
 	private List<MyTestConfig> failedTests = new ArrayList<MyTestConfig>();
 	
 	public AndroidDriver<MobileElement> driver;
-
-	/*********************************************************************/
-
-    @DataProvider(name = "hardCodedBrowsers", parallel = true)
-    public static Object[][] sauceBrowserDataProvider(Method testMethod) {
-    	
-        return new Object[][]{
-        	
-            new Object[]{CHROME, LATEST, ANDROID, "Google Pixel XL"},
-            new Object[]{SAFARI, LATEST, IOS, "iPhone 11 Pro Max"},
-
-            new Object[]{CHROME, LATEST, ANDROID, "Android Emulator"},
-            new Object[]{SAFARI, LATEST, IOS, "iOS Simulator"},
-
-            new Object[]{PERF, LATEST, MACOS, ""},
-            new Object[]{PERF, LATEST, WIN10, ""},	
-
-            new Object[]{EDGE, LATEST, WIN10, ""},
-            new Object[]{IE, LATEST, WIN10, ""},
-            new Object[]{FIREFOX, LATEST, WIN10, ""},
-            new Object[]{CHROME, LATEST, WIN10, ""},
-
-            new Object[]{SAFARI, LATEST, MACOS, ""},
-            new Object[]{EDGE, LATEST, MACOS, ""},
-            new Object[]{FIREFOX, LATEST, MACOS, ""},
-            new Object[]{CHROME, LATEST, MACOS, ""}
-
-        };
-        
-    }
-
-	/*********************************************************************/
-
-    @DataProvider(name = "hardCodedBrowsersVisual", parallel = true)
-    public static Object[][] sauceBrowserDataProviderVisual(Method testMethod) {
-    	
-        return new Object[][]{
-        	
-            new Object[]{EDGE, LATEST, WIN10, ""},
-            new Object[]{IE, LATEST, WIN10, ""},
-            new Object[]{FIREFOX, LATEST, WIN10, ""},
-            new Object[]{CHROME, LATEST, WIN10, ""},
-
-            new Object[]{SAFARI, LATEST, MACOS, ""},
-            new Object[]{EDGE, LATEST, MACOS, ""},
-            new Object[]{FIREFOX, LATEST, MACOS, ""},
-            new Object[]{CHROME, LATEST, MACOS, ""}
-
-        };
-        
-    }
+	
+	private boolean isMobileDriver = false;
 
 	/*********************************************************************/
 
@@ -155,8 +100,6 @@ public class TestBase  {
         	createDesktopDriver(browser, version, os, methodName);
         }
 
-//        String id = driver.getSessionId().toString();
-
         String id = ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
         sessionId.set(id);
         
@@ -178,8 +121,7 @@ public class TestBase  {
 
         capabilities.setCapability("name", methodName);
         
-//	    driver = new AndroidDriver<MobileElement>(new URL(SAUCE_URL), capabilities);	    	    
-		
+        isMobileDriver = true;
         
         if(os.equals(ANDROID)) {
         	webDriver.set(new AndroidDriver<MobileElement>(new URL(SAUCE_URL),capabilities));        	
@@ -245,7 +187,9 @@ public class TestBase  {
         	}
         	
             ((JavascriptExecutor) driver).executeScript("sauce:job-result=" + (isSuccess ? "passed" : "failed"));
+            
             driver.quit();
+            
     	}
 
     }
@@ -274,7 +218,7 @@ public class TestBase  {
     protected void annotate(String text) {
 
     	WebDriver driver = webDriver.get();
-    	if(driver != null) {
+    	if(driver != null && !isMobileDriver) {
             ((JavascriptExecutor) driver).executeScript("sauce:context=" + text);
     	}
 

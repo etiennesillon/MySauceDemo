@@ -6,18 +6,44 @@ import java.rmi.UnexpectedException;
 
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
 
 import web.pages.DemoCartWebPage;
 import web.pages.DemoLoginWebPage;
 import web.pages.DemoShopWebPage;
 
-public class DemoEnd2EndTest extends TestBase {
+public class MyEnd2EndTest extends TestBase {
 	
 	/*********************************************************************/
 
     private static String USERNAME = "standard_user";
     private static String PASSWD = "secret_sauce";
     
+	/*********************************************************************/
+
+    @DataProvider(name = "hardCodedBrowsers", parallel = true)
+    public static Object[][] sauceBrowserDataProvider(Method testMethod) {
+    	
+        return new Object[][]{
+        	
+            new Object[]{CHROME, LATEST, ANDROID, "Google Pixel .*"},
+            new Object[]{SAFARI, LATEST, IOS, "iPhone 12.*"},
+
+            new Object[]{PERF, LATEST, MACOS, ""},
+            new Object[]{PERF, LATEST, WIN10, ""},	
+
+            new Object[]{EDGE, LATEST, WIN10, ""},
+            new Object[]{IE, LATEST, WIN10, ""},
+            new Object[]{FIREFOX, LATEST, WIN10, ""},
+
+            new Object[]{SAFARI, LATEST, MACOS, ""},
+            new Object[]{EDGE, LATEST, MACOS, ""},
+            new Object[]{CHROME, LATEST, MACOS, ""}
+
+        };
+        
+    }
+
 	/*********************************************************************/
 
     @org.testng.annotations.Test(dataProvider = "hardCodedBrowsers")
@@ -34,8 +60,6 @@ public class DemoEnd2EndTest extends TestBase {
 
         this.annotate(String.format("Add item and go to cart", USERNAME));
         DemoCartWebPage cart = shopPage.selectItemAndGotToCart();
-        
-        driver.quit();
         
     }
 
