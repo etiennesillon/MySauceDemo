@@ -1,25 +1,437 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="10" passed="10">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="11906" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
+  <suite name="Default suite" duration-ms="82473" started-at="2021-08-24T19:58:24 AEST" finished-at="2021-08-24T19:59:47 AEST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="11906" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
-      <class name="web.tests.SauceDemoWebSimTest">
-        <test-method status="PASS" signature="setupAppium()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="setupAppium" is-config="true" duration-ms="59411" started-at="2021-08-23T21:02:58 AEST" finished-at="2021-08-23T21:03:58 AEST">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupAppium -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="loginTest" duration-ms="11885" started-at="2021-08-23T21:03:58 AEST" finished-at="2021-08-23T21:04:10 AEST">
+    <test name="Default test" duration-ms="82473" started-at="2021-08-24T19:58:24 AEST" finished-at="2021-08-24T19:59:47 AEST">
+      <class name="web.tests.MyEnd2EndTest">
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="15541" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:40 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MicrosoftEdge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="uninstallApp()[pri:0, instance:web.tests.SauceDemoWebSimTest@11758f2a]" name="uninstallApp" is-config="true" duration-ms="1900" started-at="2021-08-23T21:04:11 AEST" finished-at="2021-08-23T21:04:13 AEST">
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="81210" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:59:45 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[perf]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[macOS 10.15]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- uninstallApp -->
-      </class> <!-- web.tests.SauceDemoWebSimTest -->
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="15671" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:40 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[MicrosoftEdge]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[macOS 10.15]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="22493" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[internet explorer]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="17835" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:42 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[macOS 10.15]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="22231" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:46 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[safari]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[macOS 10.15]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="68723" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:59:33 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[perf]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="21483" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:46 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Android]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Google Pixel .*]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="22360" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:46 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Windows 10]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="loginTest" duration-ms="22840" started-at="2021-08-24T19:58:24 AEST" data-provider="hardCodedBrowsers" finished-at="2021-08-24T19:58:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[safari]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[latest]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[iOS]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[iPhone 12.*]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[public void web.tests.MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method) throws java.net.MalformedURLException,org.openqa.selenium.InvalidElementStateException,java.rmi.UnexpectedException]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginTest -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="528" started-at="2021-08-24T19:58:40 AEST" finished-at="2021-08-24T19:58:40 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="746" started-at="2021-08-24T19:58:40 AEST" finished-at="2021-08-24T19:58:41 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="672" started-at="2021-08-24T19:58:42 AEST" finished-at="2021-08-24T19:58:43 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="824" started-at="2021-08-24T19:58:46 AEST" finished-at="2021-08-24T19:58:46 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="828" started-at="2021-08-24T19:58:46 AEST" finished-at="2021-08-24T19:58:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="648" started-at="2021-08-24T19:58:46 AEST" finished-at="2021-08-24T19:58:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="671" started-at="2021-08-24T19:58:47 AEST" finished-at="2021-08-24T19:58:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="1618" started-at="2021-08-24T19:58:47 AEST" finished-at="2021-08-24T19:58:49 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="516" started-at="2021-08-24T19:59:33 AEST" finished-at="2021-08-24T19:59:33 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="tearDown(org.testng.ITestResult)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="tearDown" is-config="true" duration-ms="1226" started-at="2021-08-24T19:59:45 AEST" finished-at="2021-08-24T19:59:47 AEST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=loginTest status=SUCCESS method=MyEnd2EndTest.loginTest(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.reflect.Method)[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method status="PASS" signature="checkIfIssueNeeded()[pri:0, instance:web.tests.MyEnd2EndTest@69b0fd6f]" name="checkIfIssueNeeded" is-config="true" duration-ms="0" started-at="2021-08-24T19:59:49 AEST" finished-at="2021-08-24T19:59:49 AEST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkIfIssueNeeded -->
+      </class> <!-- web.tests.MyEnd2EndTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

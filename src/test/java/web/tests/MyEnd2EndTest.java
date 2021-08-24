@@ -53,7 +53,7 @@ public class MyEnd2EndTest extends TestBase {
         WebDriver driver = this.getWebDriver();
         
         this.annotate("Visiting Demo Login page...");
-        DemoLoginWebPage loginPage = DemoLoginWebPage.visitPage(driver, false);
+        DemoLoginWebPage loginPage = DemoLoginWebPage.visitPage(driver, 0);
 
         this.annotate(String.format("Login in with: \"%s\"", USERNAME));
         DemoShopWebPage shopPage = loginPage.login(USERNAME, PASSWD);

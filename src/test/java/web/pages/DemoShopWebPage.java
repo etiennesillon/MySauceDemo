@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import web.tests.MyFailureAnalysisDemo;
+
 public class DemoShopWebPage extends WebPageBase {
 
     /***************************************************************/
@@ -17,13 +19,21 @@ public class DemoShopWebPage extends WebPageBase {
     @FindBy(how = How.XPATH, using = "//*[@id=\"inventory_container\"]/div/div[1]/div[3]/button")
     private WebElement addButton;
 
+    @FindBy(how = How.XPATH, using = "//*[@id=\"inventory_container\"]/div/div[1]/div[3]/addtocart")
+    private WebElement addButtonFailed;
+
     @FindBy(how = How.XPATH, using = "//*[@id=\"shopping_cart_container\"]/a")
     private WebElement cartButton;
 
+    /***************************************************************/
+    
+    public int nFailure;
+    
 	/***************************************************************/
 
-	public DemoShopWebPage(WebDriver driver) {
+	public DemoShopWebPage(WebDriver driver, int nFailure) {
         super(driver);
+    	this.nFailure = nFailure;
         PageFactory.initElements(driver, this);
 	}
 	
@@ -31,7 +41,11 @@ public class DemoShopWebPage extends WebPageBase {
     
     public DemoCartWebPage selectItemAndGotToCart() {
     	
-    	this.addButton.click();
+    	if(nFailure == MyFailureAnalysisDemo.BAD_DATA) {
+        	this.addButtonFailed.click();
+    	} else {
+        	this.addButton.click();
+    	}
     	
     	this.cartButton.click();
     	

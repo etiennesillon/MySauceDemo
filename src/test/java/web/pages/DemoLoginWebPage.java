@@ -6,6 +6,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
+import web.tests.MyFailureAnalysisDemo;
+
 public class DemoLoginWebPage extends WebPageBase {
 	
     /***************************************************************/
@@ -16,8 +18,19 @@ public class DemoLoginWebPage extends WebPageBase {
     @FindBy(how = How.XPATH, using = "//*[@id=\"password\"]")
     private WebElement password;
     
-    @FindBy(how = How.XPATH, using = "//*[@id=\"login-button\"]") // //*[@id="login-button"]
+    @FindBy(how = How.XPATH, using = "//*[@id=\"login-button\"]") 
     private WebElement submitButton;
+        
+    /***************************************************************/
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"user.name\"]")
+    private WebElement userNameFailed;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"pass.word\"]")
+    private WebElement passwordFailed;
+    
+    @FindBy(how = How.XPATH, using = "//*[@id=\"login.button\"]") 
+    private WebElement submitButtonFailed;
         
     /***************************************************************/
     
@@ -28,21 +41,21 @@ public class DemoLoginWebPage extends WebPageBase {
 
     public static String url = "http://www.saucedemo.com/v1";
     
-    public boolean isFail;
-
+    public int nFailure;
+    
     /***************************************************************/
     
-    public static DemoLoginWebPage visitPage(WebDriver driver, boolean isFail) {
-    	DemoLoginWebPage page = new DemoLoginWebPage(driver, isFail);
+    public static DemoLoginWebPage visitPage(WebDriver driver, int nFailure) {
+    	DemoLoginWebPage page = new DemoLoginWebPage(driver, nFailure);
         page.visitPage();
         return page;
     }
 
     /***************************************************************/
     
-    public DemoLoginWebPage(WebDriver driver, boolean isFail) {
+    public DemoLoginWebPage(WebDriver driver, int nFailure) {
         super(driver);
-    	this.isFail = isFail;
+    	this.nFailure = nFailure;
         PageFactory.initElements(driver, this);
     }
 
@@ -62,16 +75,29 @@ public class DemoLoginWebPage extends WebPageBase {
     
     public DemoShopWebPage login(String userName, String password) {
     	
-    	if(isFail) {
-    		password = "failed";
+    	switch(nFailure) {
+    	
+	    	case MyFailureAnalysisDemo.ALL_GOOD:
+	        	this.userName.sendKeys(userName);
+	        	this.password.sendKeys(password);
+	        	submitButton.click();
+	    		break;
+	    		
+	    	case MyFailureAnalysisDemo.BAD_LOCATOR:
+	        	this.userNameFailed.sendKeys(userName);
+	        	this.passwordFailed.sendKeys(password);
+	        	submitButtonFailed.click();
+	    		break;
+	    	
+	    	case MyFailureAnalysisDemo.EXPIRED_PASSWORD:
+	        	this.userName.sendKeys(userName);
+	        	this.password.sendKeys("exipred password");
+	        	submitButton.click();
+	    		break;
+
     	}
     	
-    	this.userName.sendKeys(userName);
-    	this.password.sendKeys(password);
-    	
-    	submitButton.click();
-    	
-    	return new DemoShopWebPage(driver);
+    	return new DemoShopWebPage(driver, nFailure);
     	
     }
     
