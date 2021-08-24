@@ -81,7 +81,7 @@ public class SauceDemoWebSimTest implements SauceOnDemandSessionIdProvider, Sauc
 	@Test (enabled=true) 
 	public void loginTest() throws InterruptedException {
 		
-        DemoLoginWebPage loginPage = DemoLoginWebPage.visitPage(driver, false);
+        DemoLoginWebPage loginPage = DemoLoginWebPage.visitPage(driver, 0);
         DemoShopWebPage shopPage = loginPage.login();
         DemoCartWebPage cart = shopPage.selectItemAndGotToCart();
 
